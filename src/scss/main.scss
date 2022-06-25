@@ -1,0 +1,371 @@
+@import './responsive.scss';
+
+#background {
+	min-height: 100vh;
+	background-color: #1d2d50;
+	#error {
+		min-height: 80vh;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		color: yellowgreen;
+		a {
+			margin: 5px;
+			padding: 10px;
+			background-color: goldenrod;
+			border-radius: 10px;
+			color: black;
+		}
+	}
+	.active {
+		background-color: #0060008c !important;
+	}
+	.activeGrid {
+		box-shadow: 5px 5px 18px 7px #0060008c;
+		border: #006000 solid 2px !important;
+	}
+	#loadingWrapper {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		h2 {
+			color: #fcdab7;
+			position: absolute;
+			transform: translate(-50%, -50%);
+			top: 50%;
+			left: 50%;
+		}
+	}
+	#logoWrapper {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		padding: 10px 0px;
+		#logo {
+			width: 15vw;
+		}
+	}
+	#navBarWrapper {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		margin: 0 5vw;
+		padding: 0 2vw 10px 2vw;
+		border-bottom: #ffffff1f solid 1px;
+		border-radius: 10px;
+		#loginWrapper {
+			.navButton {
+				padding: 5px 15px;
+				background-color: rgba(255, 255, 255, 0.11);
+				border-radius: 10px;
+				transition: 0.5s;
+				margin: 0 5px;
+				color: #fcdab7;
+				a:hover {
+					text-decoration: none;
+					color: #fcdab7;
+				}
+				&:hover {
+					cursor: pointer;
+					background-color: rgba(255, 255, 255, 0.267);
+				}
+			}
+		}
+		#newsWrapper {
+			display: flex;
+			justify-content: space-around;
+			align-items: center;
+			.navButton {
+				padding: 5px 15px;
+				border-radius: 10px;
+				transition: 0.5s;
+				margin: 0 5px;
+				color: #fcdab7;
+				a:hover {
+					text-decoration: none;
+					color: #fcdab7;
+				}
+				&:hover {
+					cursor: pointer;
+					background-color: rgba(255, 255, 255, 0.267);
+				}
+			}
+		}
+	}
+	#sliderWrapper {
+		margin: 10px 0px;
+		padding: 10px 0px;
+		background-color: #133b5c;
+		border-radius: 10px;
+		width: 100vw;
+	}
+	#searchWrapper {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		flex-wrap: wrap;
+		margin: 0 5vw;
+		padding: 0 2vw 10px 2vw;
+		#typeList {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+			align-items: center;
+			.movieType {
+				margin: 5px 10px;
+				color: #fcdab7;
+				padding: 2px 10px;
+				border: white solid 1px;
+				border-radius: 5px;
+				transition: 0.5s;
+				a:hover {
+					text-decoration: none;
+					color: #fcdab7;
+				}
+				&:hover {
+					background-color: #ffffff67;
+				}
+			}
+		}
+		#searchButton {
+			margin-top: 5px;
+			input {
+				background-color: #fcdab7;
+				border-radius: 10px;
+				outline: none;
+				border: black double 3px;
+				transition: 0.5s;
+				width: 120%;
+				&::placeholder {
+					text-align: center;
+				}
+				&:focus {
+					outline: none;
+					box-shadow: 2px 2px 8px 4px rgba(255, 0, 0, 0.1);
+					border: rgba(255, 0, 0, 0.1) double 3px;
+				}
+			}
+		}
+	}
+	#footerWrapper {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		color: #fcdab7;
+		background-color: #133b5c;
+		padding: 5px;
+		font-size: 13px;
+	}
+	#contentWrapper {
+		padding: 10px 0px;
+		.adv {
+			position: relative;
+			img {
+				width: 100%;
+				top: 25%;
+				position: sticky;
+			}
+			@include tablet {
+				display: none;
+			}
+		}
+		#listMoviesWrapper {
+			#listMovies {
+				display: flex;
+				justify-content: space-between;
+				flex-wrap: wrap;
+				transition: 0.5s;
+				.movie {
+					margin: 5px;
+					border: black solid 2px;
+					flex: 1 1 auto;
+					width: 32%;
+					border-radius: 5px;
+					overflow: hidden;
+					cursor: pointer;
+					&:hover {
+						transform: scale(1.05);
+					}
+				}
+				#typeListHeader {
+					margin-top: 10px;
+					padding: 5px;
+					border-bottom: solid rgba(255, 255, 255, 0.082) 1px;
+					width: 100%;
+					display: flex;
+					flex-direction: row;
+					justify-content: start;
+					color: white;
+				}
+				.movieListType {
+					position: relative;
+					padding: 10px;
+					width: 100%;
+					display: flex;
+					flex-direction: row;
+					justify-content: start;
+					background-color: #133b5c71;
+					color: #fcdab7;
+					cursor: pointer;
+					transition: 0.3s;
+					&:nth-child(even) {
+						background-color: #1e5f7469;
+					}
+					&:hover {
+						color: black;
+					}
+					&:hover .thumb {
+						display: block;
+					}
+					.thumb {
+						position: absolute;
+						z-index: 2;
+						width: 40%;
+						height: auto;
+						left: 100%;
+						top: 0;
+						border-radius: 10px;
+						border: black solid 2px;
+						overflow: hidden;
+						display: none;
+					}
+				}
+				.rowId {
+					flex: 200 0 auto;
+					width: 20%;
+					@include desktop {
+						display: none;
+					}
+				}
+
+				.rowName {
+					flex: 500 0 auto;
+					width: 50%;
+					text-overflow: ellipsis;
+					white-space: nowrap;
+					overflow: hidden;
+				}
+				.rowLanguage {
+					flex: 200 0 auto;
+					width: 20%;
+				}
+				.rowIMDB {
+					flex: 100 0 auto;
+					width: 10%;
+					text-align: center;
+				}
+			}
+			#viewType {
+				display: flex;
+				justify-content: space-between;
+				color: #fcdab7;
+				font-size: 20px;
+				#tab {
+					display: flex;
+					flex: 700 1 auto;
+					width: 70%;
+					.tab {
+						margin: 0px 10px;
+						cursor: pointer;
+					}
+					.nowPlaying,
+					.topRated {
+						color: green;
+					}
+				}
+				#button {
+					display: flex;
+					justify-content: end;
+					flex: 300 1 auto;
+					width: 30%;
+					.type {
+						display: inline;
+						cursor: pointer;
+						margin: 5px;
+						&:hover {
+							color: white;
+						}
+					}
+				}
+			}
+		}
+		#movieDetail {
+			background-color: #133b5c60;
+			border-radius: 5px;
+			#detailWrapper {
+				color: white;
+				.row {
+					border-bottom: rgba(255, 255, 255, 0.144) solid 1px;
+					.overview {
+						margin-top: 10px;
+						margin-bottom: 10px;
+						&:hover {
+							background-color: rgba(255, 255, 255, 0.041);
+							border-radius: 5px;
+						}
+					}
+				}
+				#movieThumb {
+					border-radius: 10px;
+					width: 100%;
+					margin: 15px 0px;
+				}
+				.right {
+					text-align: right;
+				}
+				.fa-star {
+					color: yellow;
+				}
+				.fa-fire {
+					color: red;
+				}
+				.download {
+					margin: 15px 0px;
+					border: none;
+					.button {
+						display: flex;
+						justify-content: center;
+						align-items: center;
+						height: 5vh;
+						border-radius: 10px;
+						transition: 0.3s;
+						a:hover {
+							text-decoration: none;
+							color: white;
+						}
+						&:hover {
+							transform: scale(1.05);
+						}
+					}
+					#download {
+						background-color: #0000c3;
+					}
+					#watch {
+						background-color: #006000;
+					}
+				}
+			}
+		}
+		#recent {
+			h2 {
+				color: #fcdab7;
+			}
+			.recent {
+				width: 100%;
+				display: flex;
+				flex-wrap: wrap;
+				.recent1 {
+					flex: 1000 0 auto;
+					width: 100%;
+					cursor: pointer;
+				}
+				.recent2,
+				.recent3 {
+					flex: 500 0 auto;
+					width: 50%;
+					cursor: pointer;
+				}
+			}
+		}
+	}
+}
