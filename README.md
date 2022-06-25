@@ -39,7 +39,7 @@ The following **additional** features are implemented:
 Here's a walkthrough of implemented user stories:
 
 > Please record screen to a GIF file and attach link here
-
+https://drive.google.com/file/d/19jWJhgvoTnrr_U67bq2hpVcUyuLxWuVn/view?usp=sharing
 ## License
 
     Copyright [2022] [Minh C Nguyen]
